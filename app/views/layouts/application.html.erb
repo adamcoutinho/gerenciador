@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gerenciador</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= nav_bar fixed: :top, brand: "GERENCIADOR" do %>
+    <%= menu_group do %>
+        <%= menu_item "Usuários", new_user_path %>
+        <%= menu_item "Projetos", new_schedule_path %>   
+    <% end %>
+    
+	<% end %>
+   <br/>
+   <br/>
+   <br/>
+    <%= yield %>
+  </body>
+</html>

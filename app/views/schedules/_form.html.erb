@@ -1,0 +1,50 @@
+<%= form_for(schedule) do |f| %>
+  <% if schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    Cadastro Projeto
+  </div>
+  <div class="panel-body">
+ <div class="row">
+  <div class="form-group">
+  <div class="field" style="margin-left:40px;">
+    <%= f.label :data %>
+    <%= f.date_select :date ,class:"form-control" %>
+  </div>
+  </div>
+  </div>
+<div class="row">
+<div class="form-group">
+  <div class="field col-md-4" rows="3" style="margin-left:40px;">
+    <%= f.label :descricao %>
+    <%= f.text_area :obs ,class:"form-control" %>
+  </div>
+  </div>
+</div>
+<div class="row">
+<div class="form-group">
+  <div class="field" style="margin-left:40px;">
+    <%= f.label :status %>
+    <%= f.check_box :status  %>
+  </div>
+  </div>
+  </div>
+<div class="row">
+  <div class="actions" style="margin-left:40px;">
+    <%= f.submit "salvar",class:"btn btn-success"%>
+    <%= link_to 'lista', schedules_path , class:"btn btn-default" %>
+  </div>  
+<% end %>
+</div>
+</div>
+</div>

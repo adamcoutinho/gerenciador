@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @user.login %>
+</p>
+
+<p>
+  <strong>Passwd:</strong>
+  <%= @user.passwd %>
+</p>
+
+<%= link_to 'editar', edit_user_path(@user) ,class:"btn btn-default" %> |
+<%= link_to 'voltar', users_path ,class:"btn btn-default" %>

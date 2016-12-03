@@ -1,0 +1,47 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+  Novo Usuário
+</div>
+<div class="panel-body">
+ <div class="row">
+  <div class="form-group">
+  
+  <div class="field col-md-2">
+    <%= f.label :login %>
+    <%= f.text_field :login , class:"form-control" %>
+  </div>
+
+</div>
+</div>
+
+ <div class="row">
+  <div class="form-group">
+  
+  <div class="field col-md-2">
+    <%= f.label :passwd %>
+    <%= f.password_field :passwd, class:"form-control" %>
+  </div>
+
+</div>
+</div>
+</div>
+ <div class="row">
+  <div class="field col-md-2" style="margin-left:20px;">  
+    <%= f.submit "salvar", class:"btn btn-success" %>
+    <%= link_to 'lista', users_path ,class:"btn btn-default" %>  
+  </div>
+  </div>
+  </div>
+<% end %>

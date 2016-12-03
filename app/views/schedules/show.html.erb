@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @schedule.date %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @schedule.obs %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @schedule.status %>
+</p>
+
+<%= link_to 'editar', edit_schedule_path(@schedule) ,class:"btn btn-default" %> |
+<%= link_to 'voltar', schedules_path , class:"btn btn-default" %>
